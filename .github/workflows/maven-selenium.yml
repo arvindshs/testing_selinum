@@ -1,19 +1,23 @@
-name: Java selenimum CI
+name: Java Selenium CI
 
+# Trigger workflow on push or pull request to main
 on:
   push:
-    branches: [ main ]
-  pull:
-    branches: [ main ]
+    branches: 
+      - main
+  pull_request:
+    branches: 
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-      - name: Setup Java 21
+      - name: Set up JDK 21
         uses: actions/setup-java@v3
         with:
           distribution: temurin
