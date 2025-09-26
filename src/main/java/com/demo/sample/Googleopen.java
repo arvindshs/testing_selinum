@@ -1,6 +1,6 @@
 package com.demo.sample;
 
-import org.openqa.selenium.Alert;
+
 import org.openqa.selenium.By;
 // import org.openqa.selenium.Keys;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -14,9 +14,6 @@ public class Googleopen {
         driver.findElement(By.name("user_email")).sendKeys("sample@email.com");
         driver.findElement(By.name("message")).sendKeys("Hi this the sample mail for the testing in the selinum by the java code");
         driver.findElement(By.xpath("//button[@type = 'submit']")).click();
-        Alert alert = driver.switchTo().alert();
-        alert.accept();
-        driver.close();
-
+        
     }
 }
