@@ -10,6 +10,7 @@ public class Googleopen {
 
         ChromeDriver driver = new ChromeDriver();
         driver.get("https://arvindhsonline.vercel.app");
+        driver.manage().window().maximize();
         driver.findElement(By.name("user_name")).sendKeys("arvind");
         driver.findElement(By.name("user_email")).sendKeys("sample@email.com");
         driver.findElement(By.name("message")).sendKeys("Hi this the sample mail for the testing in the selinum by the java code");
