@@ -1,18 +1,23 @@
 package com.demo.navigate;
 
+import java.time.Duration;
+// import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Navigate {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         ChromeDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://wast-management-app.vercel.app/buy");
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         String url = driver.getCurrentUrl();
         System.out.println(url);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.findElement(By.xpath("//a[.//p[contains(normalize-space(text()), 'RECYCLE RALLY')]]")).click();
         System.out.println(driver.getCurrentUrl());
-        Thread.sleep(3000);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.navigate().back();
         System.out.println(driver.getCurrentUrl());
         driver.navigate().forward();
