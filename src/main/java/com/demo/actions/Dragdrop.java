@@ -1,4 +1,4 @@
-package com.demo;
+package com.demo.actions;
 
 import java.time.Duration;
 
